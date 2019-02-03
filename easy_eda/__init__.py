@@ -23,8 +23,10 @@ class NullsAnalyzer():
         self.nulls_df["nulls"] = self.nulls_df[0]
         self.nulls_df.sort_values(by=['cols'], inplace=True)
     
-    def plot(self, title=""):
-        ax = self.nulls_df.plot.barh(x="cols", y="nulls", figsize=(20, 25))
+    def plot(self, title="", **kwargs):
+        ax = self.nulls_df.plot.barh(
+            x="cols", y="nulls",
+            figsize=(20, 25), **kwargs)
         ax.set_title(title + f" - Shape of Data {self.df.shape}")
         plt.show()
 
