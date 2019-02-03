@@ -7,7 +7,7 @@ from pandas.plotting import scatter_matrix
 import seaborn as sns
 
 def bar_plot(df, x, y, figsize=(20, 25), **kwargs):
-    ax = self.nulls_df.plot.barh(
+    ax = df.plot.barh(
         x=x, y=y, figsize=figsize, **kwargs)
     ax.set_title(title + f" - Shape of Data {df.shape}")
     plt.show()
