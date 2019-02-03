@@ -6,6 +6,12 @@ import pandas as pd
 from pandas.plotting import scatter_matrix
 import seaborn as sns
 
+def bar_plot(df, x, y, figsize=(20, 25), **kwargs):
+    ax = self.nulls_df.plot.barh(
+        x=x, y=y, figsize=figsize, **kwargs)
+    ax.set_title(title + f" - Shape of Data {df.shape}")
+    plt.show()
+
 class NullsAnalyzer():
     """
     Analyzer of Null counts.
@@ -24,11 +30,7 @@ class NullsAnalyzer():
         self.nulls_df.sort_values(by=['cols'], inplace=True)
     
     def plot(self, title="", **kwargs):
-        ax = self.nulls_df.plot.barh(
-            x="cols", y="nulls",
-            figsize=(20, 25), **kwargs)
-        ax.set_title(title + f" - Shape of Data {self.df.shape}")
-        plt.show()
+        bar_plot(self.nulls_df, x="cols", y="nulls")
 
     def summary(self):
         return self.nulls_df[["nulls"]]
