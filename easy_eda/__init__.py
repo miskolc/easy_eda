@@ -29,7 +29,7 @@ class NullsAnalyzer():
         plt.show()
 
     def summary(self):
-        return self.nulls_df
+        return self.nulls_df[["nulls"]]
 
 class CategoricalAnalyzer():
     """
