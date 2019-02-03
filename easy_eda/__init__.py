@@ -13,9 +13,12 @@ class NullsAnalyzer():
     >>> nulls_analyzer = NullsAnalyzer(df)
     >>> nulls_analyzer.plot(title="Example plot")
     """
-    def __init__(self, df):
+    def __init__(self, df, null_value=None):
         self.df = df
-        self.nulls_df = pd.DataFrame(self.df.isnull().sum())
+        if null_value is None:
+            self.nulls_df = pd.DataFrame(self.df.isnull().sum())
+        else:
+            self.nulls_df = pd.DataFrame(self.df.eq(null_value).sum())
         self.nulls_df["cols"] = self.nulls_df.index
         self.nulls_df["nulls"] = self.nulls_df[0]
         self.nulls_df.sort_values(by=['cols'], inplace=True)
