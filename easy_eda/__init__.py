@@ -28,6 +28,9 @@ class NullsAnalyzer():
         ax.set_title(title + f" - Shape of Data {self.df.shape}")
         plt.show()
 
+    def summary(self):
+        return self.nulls_df
+
 class CategoricalAnalyzer():
     """
     Analyzer for Categorical Variables.

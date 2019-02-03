@@ -9,7 +9,7 @@ pandas DataFrames.
 
 setup(
     name='easy_eda',
-    version='0.1.4',
+    version='0.1.5',
     description='Exploratory Data Analysis',
     long_description=LONG_DESCRIPTION,
     url='http://github.com/miskolc/easy_eda',
