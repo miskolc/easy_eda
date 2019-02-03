@@ -1,9 +1,17 @@
 from setuptools import setup
 
+LONG_DESCRIPTION = """Easy Exploratory Data Analysis
+
+The functionality present in this package simplifies
+Exploratory Data Analysis for datasets provided as
+pandas DataFrames.
+"""
+
 setup(
     name='easy_eda',
-    version='0.1.2',
+    version='0.1.3',
     description='Exploratory Data Analysis',
+    long_description=LONG_DESCRIPTION,
     url='http://github.com/miskolc/easy_eda',
     author='Dragos Calin',
     author_email='dragos.calin.gm@mail.com',
